@@ -12,6 +12,11 @@ impl<'a> Processor<'a> {
     pub fn get_name(&self) -> &str {
         self.name
     }
+
+    pub fn start(process: &Process) {
+        
+    }
+
 }
 
 pub struct Process<'a> {
