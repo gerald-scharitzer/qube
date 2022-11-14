@@ -1,6 +1,8 @@
+use hyper::Client;
 use qube::{Process, Processor};
 
-fn main() {
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     const VERSION: &str = "0.0.0-dev";
     println!("qube {VERSION}");
 
@@ -9,4 +11,7 @@ fn main() {
 
     let process = Process::new("process0");
     println!("process {}", process.get_name());
+
+    let client = Client::new();
+    Ok(())
 }
