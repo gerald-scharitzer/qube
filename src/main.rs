@@ -1,4 +1,4 @@
-use hyper::Client;
+use hyper::{Client, Uri};
 use qube::{Process, Processor};
 
 #[tokio::main]
@@ -13,5 +13,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     println!("process {}", process.get_name());
 
     let client = Client::new();
+    let url: Uri = "127.0.0.1".parse()?;
     Ok(())
 }
